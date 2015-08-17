@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
 
-
+  
+group :test, :production do
+    gem 'pg'
+    gem 'puma'
+end
+  
 gem 'rails', '4.2.1'
 
 gem 'searchkick', '~> 0.9.0'
@@ -34,7 +39,8 @@ gem 'byebug'
 
 gem 'web-console', '~> 2.0'
 
-
 gem 'spring'
+  
+
 end
 
