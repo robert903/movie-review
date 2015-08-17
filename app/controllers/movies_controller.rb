@@ -5,6 +5,12 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all.order("created_at DESC")
+    
+    if @reviews.blank?
+      @avg_review = 0
+    else
+      @avg_review = @reviews.average(:rating).round(2)
+    end
   end
 
 
