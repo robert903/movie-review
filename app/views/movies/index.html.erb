@@ -1,11 +1,20 @@
 <% if !user_signed_in? %>
 <div class="jumbotron">
-    <h1>Your Favorite Movies Reviewed</h1>
-    <p>Hashtag hoodie mumblecore selfies. Authentic keffiyeh leggings Kickstarter, narwhal jean shorts XOXO Vice Austin cardigan. Organic           drinking vinegar freegan pickled.</p>
-    <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-  
+    <center><h1>My Favourite Movies</h1>
+    <p>Welcome To My Movie Review App.</p>
+    <p> It Is Very Amateur Looking Right Now Because I Am Not That Good At CSS Yet</p>
+      <p><%= link_to "Sign Up Now", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    </center>
 </div>
+<% else %>
+<div class="jumbotron">
+    <center><h1>You Can Now Add or Edit a Movie</h1>
+    <p>Add Any Movie That You Love </p>
+    <p> Download Links Coming Soon</p>
+      <p><%= link_to "Add New Movie", new_movie_path, class: "btn btn-primary btn-lg" %></p>
+    </center>
 <%end%>
+</div>
 
  
  <div class="row">
@@ -13,7 +22,14 @@
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
         <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie%>
-
+        
+        
+                  <!-- ## COMMENTED OUT       <% if user_signed_in?%>
+                  <%= link_to "delete", movie, method: :delete, data: { confirm: "Are You sure?" } %>
+                  <% end %>-->
+        
+        
+        
       </div>
     </div>
   <%end%>

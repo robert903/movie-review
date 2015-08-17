@@ -10,8 +10,40 @@ body {
 }
 .reviews {
 	padding: 15px 0;
-	border-bottom: 1px solid #EAEAEA;
+	border-bottom: 4px solid #EAEAEA;
 	.star-rating {
 		padding-bottom: 8px;
 	}
+}
+
+.jumbotron {
+  top: 50%;
+  left:50%;
+  border: 3px dashed #AA4847;
+  
+}
+
+#buttons{
+  outline: none;
+  background: white;
+  border: 2px solid #EAEAEA;
+  padding: .5em 1.5em;
+
+  border-style: solid;
+  position: absolute;
+  &:hover {
+
+  }
+  
+}
+
+.login {
+  border-radius: 3px;
+  border-style:dashed;
+  background-color: white;
+  position: inherit;
+
+    top: 100%;
+    font-size: .9em;
+    color: #AA4847 ;
 }

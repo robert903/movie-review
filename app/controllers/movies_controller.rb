@@ -4,14 +4,14 @@ class MoviesController < ApplicationController
 
 
   def index
-    @movies = Movie.all
+    @movies = Movie.all.order("created_at DESC")
   end
 
 
   def show
     @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
     
-    if @review.blank?
+    if @reviews.blank?
       @avg_review = 0
     else
       @avg_review = @reviews.average(:rating).round(2)
@@ -55,9 +55,11 @@ class MoviesController < ApplicationController
 
 
   def destroy
-    @movie.destroy
+    
+    Movie.find(params[:id]).destroy
+    Review.find(params[:review_id]).destroy
     respond_to do |format|
-      format.html { redirect_to movies_url, notice: 'Movie was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Movie was successfully removed.' }
       format.json { head :no_content }
     end
   end
