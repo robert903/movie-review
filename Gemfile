@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 
-gem 'sqlite3'
-
 gem 'searchkick', '~> 0.9.0'
 
 gem 'sass-rails', '~> 5.0'
@@ -30,6 +28,7 @@ gem 'paperclip', '~> 4.3.0'
 
 
 group :development, :test do
+gem 'sqlite3'
 
 gem 'byebug'
 
